@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+
+    
+
+
+    <!-- CSS Vodi Template -->
+    
+    <%= stylesheet_link_tag 'theme.css' %>
+</head>
+<body>
+    <!-- ========== HEADER ========== -->
+
+<div class="bg-dark p-4 ">
+  <ul class="nav nav-white nav-pills">
+    <li class="nav-item">
+      <%= link_to 'Home', root_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Movies', movies_path, class: "nav-link" %>
+    </li>
+    <% if user_signed_in? %>
+    <li class="nav-item">
+    <%= link_to 'Upload Movie', new_movie_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+    <%= link_to 'Account', edit_user_registration_path, class: "nav-link" %>
+    </li>
+    <% else %>
+    <li class="nav-item">
+      <%= link_to 'Log In', new_user_session_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item ">
+      <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link active" %>
+    </li>
+    <% end %>
+  </ul>
+
+</div>
+</body>
+</html>
