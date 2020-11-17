@@ -90,7 +90,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   
-  APPLICATIONNAME::Application.configure do
+  Codafilms::Application.configure do
   config.assets.compile = true
   end
 
