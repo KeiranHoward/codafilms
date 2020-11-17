@@ -13,41 +13,26 @@
 
 
     <!-- CSS Vodi Template -->
-    
+    <%= stylesheet_link_tag 'jumbo.css' %>
     <%= stylesheet_link_tag 'theme.css' %>
+
 </head>
 <body>
     <!-- ========== HEADER ========== -->
 
-<div class="position-relative">
-  <div class="js-slick-carousel slick"
-       data-hs-slick-carousel-options='{
-         "counterSelector": "#slickCounter",
-         "counterDivider": "/",
-         "counterClassMap": {
-           "current": "slick-counter-current",
-           "total": "slick-counter-total",
-           "divider": "slick-counter-divider"
-         }
-       }'>
-    <div class="js-slide bg-img-hero-center" style="background-image: url('images/aissa.png');">
-      <div class="space-5">
-      </div>
-    </div>
-    <div class="js-slide bg-img-hero-center" style="background-image: url(...);">
-      <div class="space-5">
-      </div>
-    </div>
-    <div class="js-slide bg-img-hero-center" style="background-image: url(...);">
-      <div class="space-5">
-      </div>
-    </div>
-  </div>
-
-  <div class="container position-relative">
-    <div id="slickCounter" class="slick-counter"></div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-2 text-reset">Coda Films</h1>
+    <p class="display-7 text-reset">The home of independent movie productions.</p>
   </div>
 </div>
+<script>$(".jumbotron").css({ height: $(window).height() + "px" });
+
+$(window).on("resize", function() {
+  $(".jumbotron").css({ height: $(window).height() + "px" });
+});
+</script>
+
 </body>
 
 </html>

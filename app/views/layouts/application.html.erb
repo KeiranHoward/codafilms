@@ -13,9 +13,13 @@
 
   <body>
       <%= render 'layouts/navbar' %>
+      
+      <%= yield %>
+      <div class ='container-fluid'> 
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-
-    <%= yield %>
+    
+    <p> Copyright Coda 2020</p>
+    </div>
   </body>
 </html>
