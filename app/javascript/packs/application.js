@@ -8,6 +8,7 @@ import 'popper.js'
 import 'bootstrap'
 import 'packs/index'
 import 'packs/login'
+import 'images/background.jpg'
 
 require("@rails/ujs").start()
 require("turbolinks").start()
