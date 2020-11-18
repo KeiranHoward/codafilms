@@ -1,7 +1,7 @@
 .header-dark {
-	background-image: image-url('../images/background.jpg') #444;
-	background-size:cover;
-	padding-bottom:80px;
+	background: url('../images/background.jpg') #444;
+	background-size: cover;
+	background-repeat: no-repeat;
   }
   
   @media (min-width:768px) {
