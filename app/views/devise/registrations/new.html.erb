@@ -5,46 +5,48 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
-<!------ Include the above in your HEAD tag ---------->
+
 <body>
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    <!-- Tabs Titles -->
 
-    <!-- Icon -->
-    <div class="fadeIn first">
+  <div class="fadeIn first">
        <i class="fas fa-user-circle fa-5x" id="icon" alt="User Icon"></i> 
     </div>
 
-    <!-- Login Form -->
-   
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
       <div class="form-inputs">
+      <div class="form-group">
         <%= f.input :email,
-                    required: false,
+                    required: true,
                     autofocus: true,
                     label: false,
                     placeholder: 'Email',
-                    input_html: { class: 'form_text', autocomplete: "email" } %>
+                    class: 'form_text',
+                    input_html: { autocomplete: "email" }%>
         <%= f.input :password,
-                    required: false,
+                    required: true,
                     label: false,
                     placeholder: 'Password',
-                    input_html: { class: 'form_text', autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                    class: 'form_text',
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    label: false,
+                    placeholder: 'Password',
+                    class: 'form_text',
+                    input_html: { autocomplete: "new-password" } %>
       </div>
-    
+
       <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+        <%= f.button :submit, "Sign up" %>
       </div>
-    <% end %>
-    
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+      <% end %>
     </div>
-
   </div>
-</div>
+
 </body>
