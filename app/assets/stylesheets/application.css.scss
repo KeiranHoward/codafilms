@@ -14,9 +14,18 @@
  *= require_self
  */
 
-
-
+ body {
+    background-color: #444;
+  
+}
+.reviews {
+    padding: 15px 0;
+    border-bottom: 1px solid #2f4353;
+    .star-rating{
+        padding-bottom: 8px;
+    }
+}
 @import "bootstrap/scss/bootstrap";
 @import 'theme.css';
-@import 'jumbo.css';
+@import 'index.css';
 @import 'login.css';
