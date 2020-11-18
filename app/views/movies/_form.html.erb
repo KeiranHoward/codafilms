@@ -11,31 +11,68 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+
+<div class="wrapper">
+  <div id="formContent">
+  <div class ="form-group mb-2">
+    <!-- Tabs Titles -->
+    <br>
+    <h3 class= "text-muted">Upload a Movie</h3>
+    <br>
+    <!-- Icon -->
+
+    </div>
+      <br>
+      <br>
+      <!-- Login Form -->
+   
+      <%= simple_form_for(resource, as: resource_name, url: movie_path(resource_name)) do |f| %>
+      <div class="form-inputs form-group mx-sm-3 mb-2">
+        <%= f.input :title,
+          required: true,
+          autofocus: true,
+          label: false,
+          placeholder: 'Movie Title',
+          class: 'form_text' %>
+          
+
+          <%= f.input :description,
+          required: true,
+          autofocus: true,
+          label: false,
+          placeholder: 'Description',
+          class: 'form_text' %>
+          
+          <%= f.input :movie_length,
+          required: true,
+          autofocus: true,
+          label: false,
+          placeholder: 'Length',
+          class: 'form_text'%>
+          
+            <%= f.input :rating,
+          required: true,
+          autofocus: true,
+          label: false,
+          placeholder: 'Rating',
+          class: 'form_text'%>
+          
+          <%= f.file :image,
+          required: true,
+          autofocus: true,
+          label: false,
+          placeholder: 'Image',
+          class: 'form_text'%>
+          
+        <% end %>
+      </div>
+    
+      <div class="form-actions">
+      <%= f.button :submit, "Log in" %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :movie_length %><br>
-    <%= f.text_field :movie_length %>
-  </div>
-  <div class="field">
-    <%= f.label :director %><br>
-    <%= f.text_field :director %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br>
-    <%= f.text_field :rating %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+
+
+
