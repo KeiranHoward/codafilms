@@ -31,32 +31,31 @@
                 </tr>
               </tbody>
             </table>
-            
+            <%= link_to "Write a Review", new_movie_review_path(@movie) %>
           </div>
         </div>
         <div class="col-md-7 col-md-offset-1">
           <h1 class="review_title"><%= @movie.title %></h1>
           <p><%= @movie.description %></p>
 
-   
-
-            
-          
-        </div>
+        <% if @reviews.blank? %>
+          <h3>No reviews just yet, would you like to add the first!</h3>
+          <%= link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <div class="review-rating" data-score= "<%= movie.rating%>" ></div>
+              <p><%= review.comment %></p>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
+</div>
 
   <%= link_to 'Edit', edit_movie_path(@movie) %> |
   <%= link_to 'Back', movies_path %>
 
-  <script>
-      $('.star-rating').raty({
-        path: '/assets/',
-        readOnly: true,
-        score: function() {
-              return $(this).attr('data-score');
-      }
-    });
-  </script>
+
 </body>

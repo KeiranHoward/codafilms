@@ -4,10 +4,12 @@ class MoviesController < ApplicationController
   
   def index
     @movies = Movie.all
+    @disable_nav = false
   end
 
  
   def show
+    @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
   end
 
   
