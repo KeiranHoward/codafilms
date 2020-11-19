@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>  
+ <style>
+ body {background: repeat, 
+ background-size: cover;
  
+ 
+ }
+
+ </style>
 </head>
-<body>
-<div class="container-fluid">
+<body class = "bg-gradient-dark">
+<div class="container">
 <div class="row">
   <% @movies.each do |movie| %>
-    <div class="col-sm-6 col-md-3">
-      <div class="img-fluid img-thumbnail">
-        <%= link_to (image_tag movie.image.url(:medium), class:  'rounded'), movie %>
-      </div>
+    <div class="col-sm-6 col-md-4">
+        <%= link_to (image_tag movie.image.url(:medium), class:  'm-3 img-thumbnail img-fluid rounded'), movie %>
     </div>
   <% end %>
 

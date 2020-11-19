@@ -1,8 +1,8 @@
 
 <head>  
-    <%= stylesheet_link_tag 'login.css' %>
+    <%= stylesheet_pack_tag 'login.css' %>
 </head>
-<body>
+<body class = "bg-gradient-dark">
 
     <%= form_for @movie, html: { multipart: true } do |f| %>
   <% if @movie.errors.any? %>
